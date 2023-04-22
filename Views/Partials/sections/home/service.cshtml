@@ -1,0 +1,105 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+<section class="service-section pad60">
+  <div class="container d-flex">
+    <div class="ervar">
+      <h2 class="bigheading">@Umbraco.GetDictionaryValue("home.service.title")</h2>
+      <h4 class="smll-hd">@Umbraco.GetDictionaryValue("home.service.subtitle")</h4>
+      <br>
+      <div class="br-line"></div>
+      <br>
+      <p>@Umbraco.GetDictionaryValue("home.service.desc1")</p>
+      <p>@Umbraco.GetDictionaryValue("home.service.desc2")</p>
+      <div class="ser-btns">
+        <button class="info-btn lang"><a href="/info">@Umbraco.GetDictionaryValue("info")</a></button>
+        <button class="faci-btn lang"><a href="/location">@Umbraco.GetDictionaryValue("location")</a></button>
+      </div>
+
+      <div class="gespro">
+        <h3 class="talen-hd">Gesproken Talen</h3>
+        <ul>
+          <li><img src="/img/DUITS.png"> <a href="/de">@Umbraco.GetDictionaryValue("ger")</a></li>
+          <li><img src="/img/ENGLES.png"> <a href="/en">@Umbraco.GetDictionaryValue("eng")</a></li>
+          <li><img src="/img/FRANS.png"><a href="/fr">@Umbraco.GetDictionaryValue("fre")</a></li>
+          <li><img src="/img/NEDERLAND.png"><a href="/be">@Umbraco.GetDictionaryValue("dut")</a></li>
+
+        </ul>
+      </div>
+
+    </div>
+    <script>
+    $('.lang>a').on('click',function(e){
+      e.preventDefault();
+      var lang = localStorage.getItem('lang');
+      location.href = `${lang?`/${lang}`:''}${$(this).attr('href')}`;
+      
+    })
+    </script>
+    <script>
+      onload = start;
+
+      function start() {
+        var i = 1;
+        function Move() {
+          i = (i % 4) + 1; // 4 is the Number of image in slider
+          // document.getElementById('i' + i).checked = true;
+        }
+        setInterval(Move, 3000); //change img in 3 sec
+      }
+    </script>
+    <div class="ervar-slider">
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="/img/gallery/home/huize-rosmere-web--hero-img-V7.webp" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="/img/gallery/home/huize-rosmere-web--hero-img-V6.webp" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="/img/gallery/home/huize-rosmere-web--hero-img-V5.webp" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="/img/gallery/home/huize-rosmere-web--hero-img-V4.webp" style="width:100%">
+        </div>
+
+      </div>
+      <br>
+
+      <div class="ser" style=" text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+    <script>
+      let slideIndex = 0;
+
+      showSlides();
+
+      function showSlides() {
+
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        for (i = 0; i < dots.length; i++) {
+
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        // cst_dots=slideIndex-1;
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        $(".ser .dot:nth-child(" + slideIndex + ")").addClass("active");
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
+    </script>
+  </div>
+</section>

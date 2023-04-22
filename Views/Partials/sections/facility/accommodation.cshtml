@@ -1,0 +1,829 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+<!DOCTYPE html>
+<head>
+  <title>Bisonder Vakantiewoning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/img/Tree.png">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+	
+ 
+<style>
+
+section{
+    overflow-x:hidden;
+   
+}
+.trigger5{
+     
+    padding: 7px 25px;
+    background: #3e3e3e;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-family: cursive;
+    display:block; margin: 0 auto;
+}
+.trigger0{
+     
+    padding: 7px 25px;
+    background: #3e3e3e;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-family: cursive;
+    display:block; margin: 0 auto;
+}
+.trigger3{
+     
+    padding: 7px 25px;
+    background: #3e3e3e;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-family: cursive;
+    display:block; margin: 0 auto;
+}
+.trigger4{
+     
+    padding: 7px 25px;
+    background: #3e3e3e;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-family: cursive;
+    display:block; margin: 0 auto;
+}
+
+
+.modal5 {
+    
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    z-index:9999;
+    
+}
+.modal0 {
+    
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    z-index:9999;
+    
+}
+.modal3 {
+    
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    z-index:9999;
+    
+}
+
+.modal4 {
+    
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    z-index:9999;
+    
+}
+
+.modal-content5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*transform: translate(-50%, -50%);*/
+    background-color: transparent;
+    
+    width: 100%;
+    height:100vh;
+    
+    border-radius: 0.5rem;
+    overflow:hidden;
+}
+.modal-content0 {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*transform: translate(-50%, -50%);*/
+    background-color: transparent;
+    
+    width: 100%;
+    height:100vh;
+    
+    border-radius: 0.5rem;
+    overflow:hidden;
+}
+.modal-content3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*transform: translate(-50%, -50%);*/
+    background-color: transparent;
+    
+    width: 100%;
+    height:100vh;
+    
+    border-radius: 0.5rem;
+    overflow:hidden;
+}
+.modal-content4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*transform: translate(-50%, -50%);*/
+    background-color: transparent;
+    
+    width: 100%;
+    height:100vh;
+    
+    border-radius: 0.5rem;
+    overflow:hidden;
+}
+.close-button5 {
+    position:absolute;
+    width: 1.8rem;
+    line-height: 1.8rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: white;
+    z-index:999999;
+  right: 0px;
+    
+}
+.close-button0 {
+    position:absolute;
+    width: 1.8rem;
+    line-height: 1.8rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: white;
+    z-index:999999;
+  right: 0px;
+    
+}
+
+.close-button3 {
+    position:absolute;
+    width: 1.8rem;
+    line-height: 1.8rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: white;
+    z-index:999999;
+  right: 0px;
+    
+}
+.close-button4 {
+    position:absolute;
+    width: 1.8rem;
+    line-height: 1.8rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: white;
+    z-index:999999;
+  right: 0px;
+    
+}
+.close-button5:hover{
+    background-color: lightgray;
+}
+.close-button0:hover{
+    background-color: lightgray;
+}
+.close-button3:hover{
+    background-color: lightgray;
+}
+.close-button4:hover{
+    background-color: lightgray;
+}
+.show-modal5 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+.show-modal0 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+.show-modal3 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+.show-modal4 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.facibox1{cursor:pointer;}
+.slick-prev {
+    
+    margin-left: 40px;
+    z-index:9999999999;
+    color:white !important;
+     width: 25px;
+    height: 40px;
+
+    
+  }
+
+  .slick-next {
+    margin-right: 40px;
+    z-index:9999999999;
+    color:white !important;
+    width: 25px;
+    height: 40px;
+    
+  }
+.slick-prev::before {
+ 
+  font-family: FontAwesome;
+  content: "\f053";
+  font: 40px/1 'FontAwesome';
+}
+
+.slick-next::before
+{
+   
+    font-family: FontAwesome;
+    content: "\f054";
+    font: 40px/1 'FontAwesome';
+}
+ul.faci-ul {
+    background:#f2f2f2;
+    border: 1px solid #d2d2d2;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow:.1em .1em .3em rgba(0,0,0,0.2);
+}
+.inner-faci h3 {
+    padding-bottom:5px;
+    border-bottom: 1px dashed #d2d2d2;
+}
+.faci-ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+  
+@@media only screen and (max-width: 1100px) {
+  .div2image
+  {
+    height:220px !important;
+  }
+  .modal-content0, .modal-content3, .modal-content4, .modal-content5
+  {
+    height:auto !important;
+    <!--top: 30%;-->
+    <!--left: 50%;-->
+    width:70% !important;
+  }
+  .slick-prev {
+     <!--margin-top:-100px;-->
+    z-index:99999999999;
+  }
+  .slick-next {
+    
+    <!--margin-top:-100px;-->
+    z-index:99999999999;
+  }
+  .slick-prev::before {
+ 
+  
+  font: 32px/1 'FontAwesome';
+}
+
+.slick-next::before
+{
+   
+    
+    font: 32px/1 'FontAwesome';
+}
+  
+}
+@@media only screen and (max-width: 767px) {
+.modal-content0{
+top: 30%;
+}
+}
+
+
+</style>
+
+<section class="Facilit-section Huisre-section pad60">
+    <div class="container">
+        <div class="Huisr-hd Facilit-hd">
+            <h2 class="bigheading">@Umbraco.GetDictionaryValue("facility.accommodation","Type accommodatie")</h2>
+            <p>@Umbraco.GetDictionaryValue("facility.accommodation","Huis met 3 Slaapkamers - 8 persoons")</p>
+        </div>
+        <div class="Facilit-inner">
+            
+        
+            <div class="facibox1 facibx1" id="divv0">
+                
+                <div class="modal0">
+                    <div class="modal-content0">
+                        
+                        <span class="close-button0">×</span>
+                        <!--<br>-->
+                        <center>
+                        <div id="slider0" style="background-color:transparent !important; width:auto !important; height:auto !important; max-width: 600px !important; max-height: 400px !important;"></div></center>
+                            
+                    </div>
+                </div>
+                
+                <div id="div0" style="width:auto; height:auto; background-color:gray; display:none;">
+                @await Html.PartialAsync("Items/Bedroom1view")
+                </div>
+                <div class="slappk">
+                    <h3>@Umbraco.GetDictionaryValue("facility.accommodation.bedroom","Slaapkamer") 1</h3>
+                    <p>2 @Umbraco.GetDictionaryValue("facility.accommodation.singlebed","eenpersoonsbeddenen")</p>
+                    <p>1 @Umbraco.GetDictionaryValue("facility.accommodation.bunkbed","stapelbed")</p>
+                    <img src="/img/bedtw.png">
+                    <img class="bendon-lft" src="/img/bedon.png">
+                </div>
+                <br>
+                <button class="trigger0" style="display:none;">View</button>
+                </div>
+            
+            
+            <!--Div2-->
+            <div  class="facibox1 facibx2" id="divv5">
+                
+                <div class="modal5">
+                    <div class="modal-content5">
+                        
+                        <span class="close-button5">×</span>
+                        <!--<br>-->
+                        <center>
+                        <div id="slider5" style="background-color:transparent !important; width:auto !important; height:auto !important; max-width: 600px !important; max-height: 400px !important;"></div></center>
+                            
+                    </div>
+                </div>
+                
+                <div id="div5" style="width:auto; height:auto; background-color:gray; display:none;">
+                    @await Html.PartialAsync("Items/Bedroom3view")
+                </div>
+
+                <div class="slappk">
+                    <h3>@Umbraco.GetDictionaryValue("facility.accommodation.bedroom","Slaapkamer") 3</h3>
+                    <p>2 @Umbraco.GetDictionaryValue("facility.accommodation.singlebed","eenpersoonsbeddenen")</p>
+                    <img src="/img/bedtw.png">
+                </div>
+                
+                <br>
+                <button class="trigger5" style="display:none;">View</button>
+                
+            </div>
+            <!--Div2-->
+            
+            
+            <!--Div3-->
+            
+            <div class="facibox1 facibx3" id="divv3">
+                
+                <div class="modal3">
+                    <div class="modal-content3">
+                        
+                        <span class="close-button3">×</span>
+                        <!--<br>-->
+                        <center>
+                        <div id="slider3" style="background-color:transparent !important; width:auto !important; height:auto !important; max-width: 600px !important; max-height: 400px !important;"></div></center>
+                            
+                    </div>
+                </div>
+                
+                <div id="div3" style="width:auto; height:auto; background-color:gray; display:none;">
+                @await Html.PartialAsync("Items/Bedroom4view")
+                </div>
+                
+                <div class="slappk">
+                    <h3>@Umbraco.GetDictionaryValue("facility.accommodation.bedroom","Slaapkamer") 4</h3>
+                    <p>1 @Umbraco.GetDictionaryValue("facility.accommodation.doublebed","groot tweenpersoonsbed")</p>
+                    <img src="/img/doubl-bed.png">
+                </div>
+                <br>
+                <button class="trigger3" style="display:none;">View</button>
+            </div>
+            
+            <!--Div3-->
+            
+            <!--Div4-->
+            <div class="facibox1 facibx4" id="divv4">
+                
+                <div class="modal4">
+                    <div class="modal-content4">
+                        
+                        <span class="close-button4">×</span>
+                        <!--<br>-->
+                        <center>
+                        <div id="slider4" style="background-color:transparent !important; width:auto !important; height:auto !important; max-width: 600px !important; max-height: 400px !important;"></div></center>
+                            
+                    </div>
+                </div>
+                
+                <div id="div4" style="width:auto; height:auto; background-color:gray; display:none;">
+                @await Html.PartialAsync("Items/Woonkamerview")
+                </div>
+                
+                <div class="slappk">
+                    <h3>@Umbraco.GetDictionaryValue("facility.accommodation.livingroom","Woonkamer")</h3>
+                    <p>1 @Umbraco.GetDictionaryValue("facility.accommodation.sofabed","Slaapbank")</p>
+                    <img src="/img/sofa.png">
+                </div>
+                <br>
+                <button class="trigger4" style="display:none;">View</button>
+            </div>
+            <!--Div4-->
+            
+        </div>
+    </div>
+    
+</section>
+<script>
+
+
+
+//Div 2 work
+let isdiv5opened = "false";
+var modal5 = document.querySelector(".modal5");
+var trigger5 = document.querySelector(".trigger5");
+var closeButton5 = document.querySelector(".close-button5");
+var slider55 = document.querySelector("#slider5");
+
+function toggleModal5() {
+    
+    modal5.classList.toggle("show-modal5");
+    div5();
+}
+
+function windowOnClick5(event) {
+    if (event.target === modal5) {
+        //toggleModal5();
+        document.getElementsByClassName("modal5").style.display = 'none';
+  document.getElementsByClassName("modal-content5").style.display = 'none';
+  
+    }
+}
+
+slider55.addEventListener('click', (event) => {
+  // Prevent the click event from propagating up to the parent div
+  event.stopPropagation();
+});
+
+trigger5.addEventListener("click", toggleModal5);
+//closeButton5.addEventListener("click", toggleModal5);
+
+
+closeButton5.addEventListener('click', function() {
+  //document.getElementsByClassName("modal5").style.display = 'none';
+  //document.getElementsByClassName("modal-content5").style.display = 'none';
+});
+
+//window.addEventListener("click", windowOnClick5);
+
+const myDiv55 = document.querySelector('#divv5');
+
+myDiv55.addEventListener('click', function() {
+  trigger5.click();
+});
+
+function div5() {
+    
+if(isdiv5opened=="false")
+{
+
+  const linksarray5 = [];
+  const myDiv5 = document.getElementById('div5');
+  const links5 = myDiv5.querySelectorAll('a');
+  
+  // loop through the links and get their href values
+  for (let i = 0; i < links5.length; i++) {
+    //console.log(links5[i].href);
+    linksarray5.push(links5[i].href);
+  }
+  //console.log(linksarray5);
+  
+  var html5 = "";
+for (var i = 0; i < linksarray5.length; i++) {
+  html5 += "<img class='div2image' style='width:auto !important; height:auto !important; max-width: 100% !important; max-height:100% !important;' src='" + linksarray5[i] + "'/>";
+}
+$("#slider5").html(html5);
+
+$("#slider5").slick({
+  lazyLoad: 'ondemand',
+  //autoplay: true,
+  //autoplaySpeed: 2000,
+  //dots: true,
+  arrows: true, // Make sure arrows are enabled
+  fade: true
+  
+});
+
+isdiv5opened="true";
+}
+}
+
+// div 5 work closed
+
+
+//Div 3 work
+let isdiv3opened = "false";
+var modal3 = document.querySelector(".modal3");
+var trigger3 = document.querySelector(".trigger3");
+var closeButton3 = document.querySelector(".close-button3");
+var slider33 = document.querySelector("#slider3");
+
+const myDiv33 = document.querySelector('#divv3');
+
+myDiv33.addEventListener('click', function() {
+  trigger3.click();
+});
+
+slider33.addEventListener('click', (event) => {
+  // Prevent the click event from propagating up to the parent div
+  event.stopPropagation();
+});
+
+closeButton3.addEventListener('click', function() {
+  //document.getElementsByClassName("modal3").style.display = 'none';
+  //document.getElementsByClassName("modal-content3").style.display = 'none';
+});
+
+function toggleModal3() {
+    
+    modal3.classList.toggle("show-modal3");
+    div3();
+}
+
+function windowOnClick3(event) {
+    if (event.target === modal3) {
+        //toggleModal3();
+        document.getElementsByClassName("modal3").style.display = 'none';
+  document.getElementsByClassName("modal-content3").style.display = 'none';
+    }
+}
+
+trigger3.addEventListener("click", toggleModal3);
+//closeButton3.addEventListener("click", toggleModal3);
+//window.addEventListener("click", windowOnClick3);
+
+function div3() {
+    
+if(isdiv3opened=="false")
+{
+
+  const linksarray3 = [];
+  const myDiv3 = document.getElementById('div3');
+  const links3 = myDiv3.querySelectorAll('a');
+  
+  // loop through the links and get their href values
+  for (let i = 0; i < links3.length; i++) {
+    //console.log(links3[i].href);
+    linksarray3.push(links3[i].href);
+  }
+  //console.log(linksarray3);
+  
+  var html3 = "";
+for (var i = 0; i < linksarray3.length; i++) {
+  html3 += "<img class='div2image' style='width:auto !important; height:auto !important; max-width: 100% !important; max-height:100% !important;' src='" + linksarray3[i] + "'/>";
+}
+$("#slider3").html(html3);
+
+$("#slider3").slick({
+  lazyLoad: 'ondemand',
+  //autoplay: true,
+  //autoplaySpeed: 2000,
+  //dots: true,
+  arrows: true, // Make sure arrows are enabled
+  fade: true
+});
+
+isdiv3opened="true";
+}
+}
+
+// div 3 work closed
+
+
+
+//Div 4 work
+let isdiv4opened = "false";
+var modal4 = document.querySelector(".modal4");
+var trigger4 = document.querySelector(".trigger4");
+var closeButton4 = document.querySelector(".close-button4");
+var slider44 = document.querySelector("#slider4");
+
+const myDiv44 = document.querySelector('#divv4');
+
+myDiv44.addEventListener('click', function() {
+  trigger4.click();
+});
+
+slider44.addEventListener('click', (event) => {
+  // Prevent the click event from propagating up to the parent div
+  event.stopPropagation();
+});
+
+function toggleModal4() {
+    
+    modal4.classList.toggle("show-modal4");
+    div4();
+}
+
+function windowOnClick4(event) {
+    if (event.target === modal4) {
+        //toggleModal4();
+        document.getElementsByClassName("modal4").style.display = 'none';
+  document.getElementsByClassName("modal-content4").style.display = 'none';
+    }
+}
+
+trigger4.addEventListener("click", toggleModal4);
+//closeButton4.addEventListener("click", toggleModal4);
+//window.addEventListener("click", windowOnClick4);
+
+closeButton4.addEventListener('click', function() {
+  //document.getElementsByClassName("modal4").style.display = 'none';
+  //document.getElementsByClassName("modal-content4").style.display = 'none';
+});
+
+
+function div4() {
+    
+if(isdiv4opened=="false")
+{
+
+  const linksarray4 = [];
+  const myDiv4 = document.getElementById('div4');
+  const links4 = myDiv4.querySelectorAll('a');
+  
+  // loop through the links and get their href values
+  for (let i = 0; i < links4.length; i++) {
+    //console.log(links4[i].href);
+    linksarray4.push(links4[i].href);
+  }
+  //console.log(linksarray4);
+  
+  var html4 = "";
+for (var i = 0; i < linksarray4.length; i++) {
+  html4 += "<img class='div2image' style='width:auto !important; height:auto !important; max-width: 100% !important; max-height:100% !important;' src='" + linksarray4[i] + "'/>";
+}
+$("#slider4").html(html4);
+
+$("#slider4").slick({
+  lazyLoad: 'ondemand',
+  //autoplay: true,
+  //autoplaySpeed: 2000,
+  //dots: true,
+  arrows: true, // Make sure arrows are enabled
+  fade: true
+});
+
+isdiv4opened="true";
+}
+}
+// div 4 work closed
+
+
+
+
+//Div 1 work
+let isdiv0opened = "false";
+var modal0 = document.querySelector(".modal0");
+var trigger0 = document.querySelector(".trigger0");
+var closeButton0 = document.querySelector(".close-button0");
+var slider00 = document.querySelector("#slider0");
+
+const myDiv00 = document.querySelector('#divv0');
+
+slider00.addEventListener('click', (event) => {
+  // Prevent the click event from propagating up to the parent div
+  event.stopPropagation();
+});
+
+myDiv00.addEventListener('click', function() {
+  trigger0.click();
+});
+
+function toggleModal0() {
+    
+    modal0.classList.toggle("show-modal0");
+    div0();
+}
+
+function windowOnClick0(event) {
+    if (event.target === modal0) {
+        //toggleModal0();
+        document.getElementsByClassName("modal0").style.display = 'none';
+  document.getElementsByClassName("modal-content0").style.display = 'none';
+
+    }
+}
+
+closeButton0.addEventListener('click', function() {
+  //document.getElementsByClassName("modal0").style.display = 'none';
+  //document.getElementsByClassName("modal-content0").style.display = 'none';
+});
+
+trigger0.addEventListener("click", toggleModal0);
+//closeButton0.addEventListener("click", toggleModal0);
+//window.addEventListener("click", windowOnClick0);
+
+function div0() {
+    
+if(isdiv0opened=="false")
+{
+
+  const linksarray0 = [];
+  const myDiv0 = document.getElementById('div0');
+  const links0 = myDiv0.querySelectorAll('a');
+  
+  // loop through the links and get their href values
+  for (let i = 0; i < links0.length; i++) {
+    //console.log(links0[i].href);
+    linksarray0.push(links0[i].href);
+  }
+  //console.log(linksarray0);
+  
+  var html0 = "";
+for (var i = 0; i < linksarray0.length; i++) {
+  html0 += "<img class='div2image' style='width:auto !important; height:auto !important; max-width: 100% !important; max-height:100% !important;' src='" + linksarray0[i] + "'/>";
+}
+$("#slider0").html(html0);
+
+$("#slider0").slick({
+  lazyLoad: 'ondemand',
+  //autoplay: true,
+  //autoplaySpeed: 2000,
+  //dots: true,
+  arrows: true, // Make sure arrows are enabled
+  fade: true
+});
+
+isdiv0opened="true";
+}
+}
+// div 1 work closed
+
+</script>
+

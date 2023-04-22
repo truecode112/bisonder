@@ -1,0 +1,29 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+<section class="booking-section pad60">
+    <div class="container">
+      <div class="booking-hd">
+        <h2 class="bigheading">@Umbraco.GetDictionaryValue("home.booking.reviews")</h2>
+        <p>@Umbraco.GetDictionaryValue("home.booking.viabooking")</p>
+        <div class="br-line"></div>
+      </div>
+
+      <div class="wrapper">
+        <div class="carousel owl-carousel">
+        @for (int item = 1; item <= 6; item++)
+        {
+          <div class="card card-1">
+            <div class="card-inner">
+              <div class="nm-div">
+                <span>p</span>
+                <p>Pascal<b><img src="/img/ENGLES.png">@Umbraco.GetDictionaryValue("nl")</b></p>
+              </div>
+              <p class="uotes-p">" Het was een geweldige ervaring en zeer mooi vakantiehuis, een aanrader!"</p>
+              <a href="">>@Umbraco.GetDictionaryValue("home.booking.moreinfo")</a>
+            </div>
+          </div>
+        }
+        </div>
+      </div>
+
+    </div>
+  </section>

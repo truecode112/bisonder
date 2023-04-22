@@ -1,0 +1,30 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+<section class="boek-section ">
+      <div class="container d-flex justify-between">
+          <div class="logo-flex">
+            <a href=""><img src="/img/Bisonder-logo--white-and-green--transparent.png" style="max-width: 100%;"></a>
+          </div>
+          <div>
+            <h2 class="bigheading">@Umbraco.GetDictionaryValue("footer.booknow")</h2>
+                <div class="br-linedark"></div>
+                <div class="ser-btns">
+                  <a href="example@mail.com?Reservering Vakantiewoning Bisonder">
+                    <button class="info-btn">@Umbraco.GetDictionaryValue("footer.check")</button>
+                  </a>
+                  <a href="https://www.booking.com/hotel/be/huize-rosmere.nl.html" target="_blank">
+                    <button class="faci-btn">@Umbraco.GetDictionaryValue("footer.reserve")</button>
+                  </a>
+                </div>
+          </div>
+      </div>
+     
+  </section>
+  <footer class="slice-ft">
+    <div class="container d-flex">
+      <div class="ftcol">
+        <p>@Umbraco.GetDictionaryValue("footer.copyright")</p>
+      </div>
+      <div class="ftcol-copy-rght"></div>
+      <p>@Umbraco.GetDictionaryValue("footer.terms")</p>
+    </div>
+  </footer>

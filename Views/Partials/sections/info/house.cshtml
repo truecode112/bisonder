@@ -1,0 +1,148 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+<section class="deze-section" style="background-image:url('/img/gallery/info/deze.webp')">
+  <div class="container deze-cont">
+    <h3>@Umbraco.GetDictionaryValue("info.house.title","Duurzaamheidsinitiatieven")</h3>
+    <h5>@Umbraco.GetDictionaryValue("info.house.subtitle","Deze accommodatie heeft stappen genomen om een duurzamer en milieuvriendelijker verblijf te bieden")</h5>
+  </div>
+</section>
+<section class="Huisre-section pad60">
+  <div class="container">
+    <div class="Huisr-hd">
+      <h2 class="bigheading">@Umbraco.GetDictionaryValue("info.house.rule","Huisregels")</h2>
+      <p>@Umbraco.GetDictionaryValue("info.house.subrule","Huize Rosmere accepteert speciale verzoeken, voeg ze toe bij de volgende stap!")</p>
+    </div>
+    <div class="huisr-innerrw">
+      <div class="huisr-ul d-flex">
+        <div class="hd">
+          <p><img src="/icons/svg207.svg" alt="svg207"> @Umbraco.GetDictionaryValue("info.house.checkin","Inchecken")</p>
+        </div>
+        <div class="huisr-right">
+          <div id="time-range">
+            <p><span class="slider-time">16:00 </span> - <span class="slider-time2">20:00 </span>
+            </p>
+            <div class="sliders_step1">
+              <div id="slider-range" title="16:00 - 20:00"></div>
+            </div>
+          </div>
+          <p>@Umbraco.GetDictionaryValue("info.house.checkindesc","Laat de accommodatie van tevoren weten hoe laat je arriveert.")</p>
+        </div>
+      </div>
+      <div class="huisr-ul d-flex">
+        <div class="hd">
+          <p><img src="/icons/svg208.svg" alt="svg208">@Umbraco.GetDictionaryValue("info.house.checkout"," Uitchecken") </p>
+        </div>
+        <div class="huisr-right">
+          <div id="time-range2">
+            <p><span class="slider-time3">10:00 </span> - <span class="slider-time4">11:00 </span>
+            </p>
+            <div class="sliders_step1">
+              <div id="slider-range2" title="10:00 - 11:00"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="huisr-ul d-flex">
+        <div class="hd">
+          <p><img src="/icons/svg10.svg" alt="svg10">@Umbraco.GetDictionaryValue("info.house.cancelprepay"," Annuleren / vooruitbetalen ")</p>
+        </div>
+        <div class="huisr-right">
+          <p>
+            @Umbraco.GetDictionaryValue("info.house.cpdesc1","Annulerings- en vooruitbetalingsvoorwaarden verschillen per accommodatietype. Vul alsjeblieft")
+            <a class="random-link" href="">@Umbraco.GetDictionaryValue("info.house.cpdesclink","de data van je verblijf")</a>
+            @Umbraco.GetDictionaryValue("info.house.cpdesc2","in en controleer de voorwaarden van je gekozen kamer.")
+          </p>
+        </div>
+      </div>
+      <div class="huisr-ul d-flex">
+        <div class="hd">
+          <p><img src="/icons/svg10.svg" alt="svg10"> @Umbraco.GetDictionaryValue("info.house.deposit","Terugbetaalbare borg") </p>
+        </div>
+        <div class="huisr-right">
+          <p>@Umbraco.GetDictionaryValue("info.house.depositdesc","Een borg van EUR 250 is verplicht. Dat is ongeveer 38806.14ARS. Deze wordt contant geïnd. Je wordt terugbetaald bij het uitchecken. Je borg wordt volledig contant terugbetaald, na controle op eventuele schade aan de accommodatie.")
+          </p>
+        </div>
+      </div>
+      <div class="huisr-ul d-flex">
+        <div class="hd">
+          <p><img src="/icons/svg205.svg" alt="svg205">@Umbraco.GetDictionaryValue("info.house.child","Kinderen en bedden")</p>
+        </div>
+        <div class="huisr-right">
+          <p><b>@Umbraco.GetDictionaryValue("info.house.childsub1","Voorwaarden voor kinderen")
+            </b>
+          </p>
+          <p>
+            @Umbraco.GetDictionaryValue("info.house.childsub1desc1","Kinderen van alle leeftijden zijn welkom.")
+            <br>
+            @Umbraco.GetDictionaryValue("info.house.childsub1desc2","Voeg het aantal kinderen in je groep en hun leeftijden toe aan je zoekopdracht om de juiste prijzen en informatie over de bezetting te zien")
+          </p>
+          <br>
+          <p><b>@Umbraco.GetDictionaryValue("info.house.childsub2","Voorwaarden voor kinderbedjes en extra bedden")
+            </b></p>
+          <br>
+          <div class="ja-br">
+            <p>0-2 jaar
+            </p>
+          </div>
+          <div class="ja-br Grati-br">
+            <p><img src="/icons/svg210.svg" alt="svg210">@Umbraco.GetDictionaryValue("info.house.childsub2"," Kinderbedje op verzoek")
+            </p>
+            <span>@Umbraco.GetDictionaryValue("info.house.childsub2subtitle","Gratis")</span>
+          </div>
+          <p>@Umbraco.GetDictionaryValue("info.house.childsub2desc1","Toeslagen worden niet automatisch meegerekend in het totaalbedrag en dienen tijdens het verblijf apart betaald te worden.")</p>
+          <p>@Umbraco.GetDictionaryValue("info.house.childsub2desc2"," 1 kinderbedje op verzoek beschikbaar. Alle kinderbedjes en extra bedden zijn afhankelijk van beschikbaarheid.")</p>
+        </div>
+      </div>
+      <div class="huisr-ul d-flex">
+        <div class="hd">
+          <p><img src="/icons/svg211.svg" alt="svg211">@Umbraco.GetDictionaryValue("info.house.noage"," Geen leeftijdsrestrictie") </p>
+        </div>
+        <div class="huisr-right">
+          <p>@Umbraco.GetDictionaryValue("info.house.noagedesc","Er is geen minimumleeftijd om in te checken")</p>
+        </div>
+      </div>
+      <div class="huisr-ul d-flex">
+        <div class="hd">
+          <p><img src="/icons/svg212.svg" alt="svg212"> @Umbraco.GetDictionaryValue("info.house.paymentbooking","Betalingen via Booking.com") </p>
+        </div>
+        <div class="huisr-right">
+          <p>@Umbraco.GetDictionaryValue("info.house.paymentbookingdesc","Booking.com int namens de accommodatie de betaling voor dit verblijf, maar zorg ervoor dat je contant")</p>
+        </div>
+      </div>
+      <div class="huisr-ul d-flex">
+        <div class="hd">
+          <p><img src="/icons/svg213.svg" alt="svg213">@Umbraco.GetDictionaryValue("info.house.smoking","Roken ")</p>
+        </div>
+        <div class="huisr-right">
+          <p>@Umbraco.GetDictionaryValue("info.house.smokingdesc","Roken is niet toegestaan")
+
+          </p>
+        </div>
+      </div>
+      <div class="huisr-ul d-flex">
+        <div class="hd">
+          <p><img src="/icons/svg214.svg" alt="svg214">@Umbraco.GetDictionaryValue("info.house.celebrate"," Feesten ")</p>
+        </div>
+        <div class="huisr-right">
+          <p>@Umbraco.GetDictionaryValue("info.house.celebratedesc","Feesten/bijeenkomsten zijn niet toegestaan")</p>
+        </div>
+      </div>
+      <div class="huisr-ul d-flex">
+        <div class="hd">
+          <p><img src="/icons/svg215.svg" alt="svg215"> @Umbraco.GetDictionaryValue("info.house.quiethours","Rustige uren ")</p>
+        </div>
+        <div class="huisr-right">
+          <p>@Umbraco.GetDictionaryValue("info.house.quiethoursdesc","Het moet stil zijn tussen 23:00 en 07:00.")</p>
+        </div>
+      </div>
+      <div class="huisr-ul d-flex">
+        <div class="hd">
+          <p><img src="/icons/svg216.svg" alt="svg216"> @Umbraco.GetDictionaryValue("info.house.pet","Huisdieren ")</p>
+        </div>
+        <div class="huisr-right">
+          <p>@Umbraco.GetDictionaryValue("info.house.petdesc","Huisdieren zijn niet toegestaan.")</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

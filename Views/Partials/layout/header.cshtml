@@ -1,0 +1,101 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+  <header class="top-nav">
+  <div class="container d-flex">
+    <div class="logodiv">
+      <a href=""><img src="/img/bisonder-logo.png"></a>
+    </div>
+
+    <div class="topnav" id="myTopnav">
+      <div class="nav-list">
+        <li class="active"><a href="/" class="nav-ac">
+          @Umbraco.GetDictionaryValue("home")</a></li>
+        <li><a href="/info" class="nav-ac">
+          @Umbraco.GetDictionaryValue("info")</a></li>
+        <li><a href="/facility" class="nav-ac">
+          @Umbraco.GetDictionaryValue("facility")</a></li>
+        <li><a href="/location" class="nav-ac">
+          @Umbraco.GetDictionaryValue("location")</a></li>
+        <li><a href="/photo" class="nav-ac">
+          @Umbraco.GetDictionaryValue("photo")</a></li>
+        <li><a href="/contact" class="nav-ac">
+          @Umbraco.GetDictionaryValue("contact")</a></li>
+  <div class="dropdown">
+    <button class="dropbtn" ><span id="current-language">BE</span> 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">FR</a>
+      <a href="#">DE</a>
+      <a href="#">EN</a>
+      <a href="#">BE</a>
+    </div>
+  </div> 
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+  </header>
+  <style>
+
+</style>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<script>
+$(function () {
+  var url = window.location.pathname.split('/');
+  var secondLevelLocation = url.slice(-1)[0];
+  $('.top-nav .nav-list a').each(function () {
+    var attr_cst = $(this).attr('href');
+    var url2 = attr_cst.split('/');
+    var abccc = url2.slice(-1)[0];
+    if (secondLevelLocation == abccc && secondLevelLocation != "") {
+      $(this).parent().addClass('active');
+      var aa = $('.top-nav .nav-list li:nth-child(1)').removeClass("active");
+    }
+  });
+}); 
+</script>
+<script>
+function goto(url) {
+    var lang = localStorage.getItem('lang');
+    location.href(`${lang?`/${lang}`:''}${url}`);
+}
+function setLang(lang) {
+    localStorage.setItem('lang',lang);
+    location.href = `/${lang}`;
+}
+$('.nav-list li>a').on('click',function(e){
+  e.preventDefault();
+  var lang = localStorage.getItem('lang');
+  location.href = `${lang?`/${lang}`:''}${$(this).attr('href')}`;
+  
+})
+$('.dropdown-content>a').on('click',function(e){
+  e.preventDefault();
+  localStorage.setItem('lang',$(this).html().toLowerCase());
+  location.href = `/${$(this).html().toLowerCase()}`;  
+})
+</script>
+<script>
+$(function () {
+  var lang = localStorage.getItem('lang');
+  var url = window.location.pathname.split('/');
+  var secondLevelLocation = url[1];
+  var lang = localStorage.getItem('lang');
+  langs = ['en','be','de','fr'];
+  if (langs.includes(secondLevelLocation)){
+    $('#current-language').html(secondLevelLocation.toUpperCase());
+    localStorage.setItem('lang',secondLevelLocation);
+  }
+})
+</script>

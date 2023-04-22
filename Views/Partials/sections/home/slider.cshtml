@@ -1,0 +1,26 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+<div id="slider">
+  @for (int item = 1; item <= 6; item++)
+
+  {
+    var text = "background-image:url('/img/gallery/home/huize-rosmere-web--hero-img-V"+item+".webp');";
+    <div class="slide" style="@text">
+      <div class="inner-content">
+        <div class="">
+          <h2>@Umbraco.GetDictionaryValue("home.slider.house")</h2>
+          <p>@Umbraco.GetDictionaryValue("home.slider.holiday")</p> 
+          <div class="bnner-btns">
+            <button class="info-btn lang"><a href="/info">@Umbraco.GetDictionaryValue("info")</a></button>
+            <button class="faci-btn lang"><a href="/facility">@Umbraco.GetDictionaryValue("facility")</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+    <!--Controlling arrows-->
+    <span class="controls" onclick="prevSlide(-1)" id="left-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i>
+    </span>
+    <span class="controls" id="right-arrow" onclick="nextSlide(1)"><i class="fa fa-angle-right" aria-hidden="true"></i>
+    </span>
+
+  </div>

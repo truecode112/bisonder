@@ -1,0 +1,26 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+
+  var mediaFolder = Umbraco.Media(1075); // Selected Folder
+ <section class="pad60">
+  <div class="container">
+    <div id="gallery" class="container-fluid">
+    @foreach (var image in mediaFolder.Children) 
+    {
+      var url = image.Url();
+      <a href="@url" class="example-image-link"
+        data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+        <img src="@url" class="example-image img-responsive">
+      </a>
+    }
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+}

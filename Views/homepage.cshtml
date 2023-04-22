@@ -1,0 +1,130 @@
+﻿
+
+
+<head>
+  <title>Bisonder Vakantiewoning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/img/Tree.png">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+	@await Html.PartialAsync("layout/header")
+	@await Html.PartialAsync("sections/home/slider")
+	@await Html.PartialAsync("sections/home/dots-con")
+	@await Html.PartialAsync("sections/home/service")
+	@await Html.PartialAsync("sections/home/booking")
+	@await Html.PartialAsync("layout/footer")
+  
+  <script>
+    $('.carousel').owlCarousel({
+      items: 2,
+      margin: 30,
+      loop:true,
+      nav: true,
+      navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+      dots: false,
+      mouseDrag: true,
+      
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        480: {
+          items: 1
+        },
+        769: {
+          items: 2
+        }
+      }
+
+    });
+
+// 
+  </script>
+  <!-- start scripts -->
+  <script>
+    let slideIndex = 0;
+
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+
+
+  </script>
+
+  <script type="text/javascript">
+    // banner slider script
+    var slides = document.querySelectorAll(".slide");
+    var dots = document.querySelectorAll(".dot");
+    var index = 0;
+
+
+    function prevSlide(n) {
+      index += n;
+      changeSlide();
+    }
+    setInterval(function () {
+      nextSlide(1);
+    }, 6000);
+    function nextSlide(n) {
+      index += n;
+      changeSlide();
+    }
+
+    changeSlide();
+
+    function changeSlide() {
+
+      if (index > slides.length - 1)
+        index = 0;
+
+      if (index < 0)
+        index = slides.length - 1;
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+
+        dots[i].classList.remove("active");
+
+      }
+
+      slides[index].style.display = "block";
+      dots[index].classList.add("active");
+
+    }
+// var i=1
+// setInterval(function(){
+//     currentSlide(i);
+//     if(i==4){
+//         i=1;
+//     }
+//     else{
+//         i++;
+//     }
+// },4000);
+$(document).ready(function(){
+     setTimeout(function () {
+ @* console.clear(); *@
+     }, 3000);
+});
+  </script>

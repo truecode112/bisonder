@@ -1,0 +1,41 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+    <section class="contact-section pad60">
+        <div class="container d-flex">
+            <div class="form-col">
+                <form id="contact" action="" method="post">
+                    <h3>Vragen?</h3>
+                    <div class="br-line"></div>
+                    <br>
+                    <div class="fst-col">
+                        <input placeholder="Your name" type="text" name="name" onkeypress="return Validate(event);"
+                            required>
+                        <input placeholder="Your Email Address" type="email" tabindex="2" required>
+                    </div>
+                    <div class="sec-col">
+                        <input placeholder="Subject " type="url" tabindex="4" required>
+                    </div>
+                    <div class="third-col">
+                        <textarea placeholder="Message" tabindex="5" required></textarea>
+                    </div>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending"> Verstuur</button>
+                </form>
+            </div>
+            <div class="info-col">
+                <h3>Contact Info</h3>
+                <div class="br-line"></div>
+                <br>
+                <ul class="contact-ul">
+                    <li><img src="/img/loc.png"> @Model.Value("address")</li>
+
+                    <li>
+                        <img src="/img/ph.png">
+                        <a href="tel:5555-555-5555"> @Model.Value("contactNumber")</a>
+                    </li>
+                    
+                    <li><img src="/img/mail.png">
+                        <a href="mailto:@Model.Value("emailId")">@Model.Value("emailId")</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>

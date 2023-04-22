@@ -1,0 +1,155 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+<section class="Faciliteiten-section pad60">
+    <div class="container">
+        <div class="locatie-hd">
+            <h2 class="bigheading" style="margin-bottom: 30px;">@Umbraco.GetDictionaryValue("facility","Faciliteiten")</h2>
+            <div class="br-line"></div>
+            <br>
+            <h4>@Umbraco.GetDictionaryValue("facility.pop","Populairste faciliteiten")</h4>
+            <p><img src="/icons/p.png">@Umbraco.GetDictionaryValue("facility.freeparking"," Gratis parkeergelegenheid ")<img src="/icons/wi.png">@Umbraco.GetDictionaryValue("facility.wifi","Gratis WiFi")</p>
+        </div>
+        <div class="inner-faci">
+            <div class="faci-col-left">
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/bath.jpg">@Umbraco.GetDictionaryValue("facility.bathroom"," Badkamer")</h3>
+                    <li>@Umbraco.GetDictionaryValue("facility.bathroom1","Extra wc")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.bathroom2","Bad of douche")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.bathroom3","Eigen badkamer")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.bathroom4","Eigen badkamer")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.bathroom5","Wc")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.bathroom6","Föhn")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.bathroom7","Bad")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.bathroom8","Douche")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/frontbed.jpg">@Umbraco.GetDictionaryValue("facility.bedroom","Slaapkamer")</h3>
+                    <li>(Kleding) kast</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/outside.jpg">@Umbraco.GetDictionaryValue("facility.outside","Buiten")</h3>
+                    <li>@Umbraco.GetDictionaryValue("facility.outside1","Picknickplaats")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.outside2","Buitenmeubels")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.outside3","Eethoek buiten")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.outside4","Buitenmeubels")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.outside5","Zonneterras")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.outside6","Terras")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.outside7","Tuin")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/kitchen.jpg">@Umbraco.GetDictionaryValue("facility.kitchen","Keuken")</h3>
+                    <li>@Umbraco.GetDictionaryValue("facility.kitchen1","Kinderstoel")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.kitchen2","Ettafel")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.kitchen3","Koffiezetapparaat")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.kitchen4","Schoonmaakmiddelen")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.kitchen5","Broodrooster")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.kitchen6","Kookplaat")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.kitchen7","Oven")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.kitchen8","Keukengerei")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.kitchen9","Elektrische waterkoker")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.kitchen10","Keuken")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.kitchen12","Wasmachine")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.kitchen13","Vaatwasser")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.kitchen14","Magnetron")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.kitchen15","Koelkast")</li>
+                </ul>
+
+            </div>
+            <div class="faci-col-cntr">
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/bed.jpg">@Umbraco.GetDictionaryValue("facility.fac_room","Kamerfaciliteiten")</h3>
+                    <p>@Umbraco.GetDictionaryValue("facility.fac_room_extra","Extra comfort")</p>
+                    <li>@Umbraco.GetDictionaryValue("facility.fac_room1","Stopcontact bij het bed")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.fac_room2","Slaapbank")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.fac_room3","Droogrek voor kleding")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.fac_room4","Kledingrek")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.fac_room5","Houten vloeren of parketvloeren")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.fac_room6","Betegelde/marmeren vloer")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.fac_room7","Eigen ingang")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.fac_room8","Vloerbedekking")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.fac_room9","Strijkvoorzieningen")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.fac_room10","Strijkijzer")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/outsideview.jpg">@Umbraco.GetDictionaryValue("facility.outside_view","Buiten & Uitzicht")</h3>
+                    <p>@Umbraco.GetDictionaryValue("facility.outside_view_extra","Geniet van het uitzicht")</p>
+                    <li>@Umbraco.GetDictionaryValue("facility.outside_view1","Uitzicht op de tuin")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.outside_vie2","Uitzicht")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/activity.jpg">@Umbraco.GetDictionaryValue("facility.activity","Activiteiten")</h3>
+                    <li>@Umbraco.GetDictionaryValue("facility.activity1","Paardrijden Nabij de accommodatie")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.activity2","Hiking Nabij de accommodatie & Toegankelijkheid")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.activity3","Tennisbaan Nabij de accommodatie Toeslag Wellness")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/sofa.jpg">@Umbraco.GetDictionaryValue("facility.living_space","Woonruimte")</h3>
+                    <p>@Umbraco.GetDictionaryValue("facility.living_space_desc","Een plek om samen te komen")</p>
+                    <li>@Umbraco.GetDictionaryValue("facility.living_space1","Eethoek")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.living_space2","Zithoek")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/media.jpg">@Umbraco.GetDictionaryValue("facility.media_tech","Media & Technologie")</h3>
+                    <p>@Umbraco.GetDictionaryValue("facility.media_tech_desc","Plezier voor iedereen")</p>
+                    <li>@Umbraco.GetDictionaryValue("facility.media_tech1","Flatscreen-tv")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.media_tech2","Radio")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.media_tech3","Tv")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/restaurant.jpg">@Umbraco.GetDictionaryValue("facility.eat_drink","Eten & Drinken")</h3>
+                    <p>@Umbraco.GetDictionaryValue("facility.eat_drink_desc","Thee- en koffiefaciliteiten")</p>
+                </ul>
+            </div>
+
+            <div class="faci-col-rght">
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/wifi.jpg">@Umbraco.GetDictionaryValue("facility.internet","Internet")</h3>
+                    <li>@Umbraco.GetDictionaryValue("facility.internet_desc","WiFi is beschikbaar in de openbare ruimtes. Deze service is gratis.")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/parking.jpg">@Umbraco.GetDictionaryValue("facility.parkingspot","Parkeerplaats")</h3>
+                   <p style="color: #000;">@Umbraco.GetDictionaryValue("facility.parkingspot_desc","privé parkeren is gratis. Je kunt parkeren bij de accommodatie. Reserveren is niet noodzakelijk. ")</p>
+                    <li>@Umbraco.GetDictionaryValue("facility.parkingspot1","Parkeren")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/entertainment.jpg">@Umbraco.GetDictionaryValue("facility.eafs","Entertainment en familiediensten")</h3>
+                    <li>@Umbraco.GetDictionaryValue("facility.eafs1","Boeken, dvd's of muziek voor kinderen")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.eafs2","Bordspellen/puzzels")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/lock.jpg">@Umbraco.GetDictionaryValue("facility.safety","Veiligheid")</h3>
+                    <li>@Umbraco.GetDictionaryValue("facility.safety1","Brandblussers")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.safety2","Rookmelder")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/person_sitting.jpg">@Umbraco.GetDictionaryValue("facility.access","Toegankelijkheid")</h3>
+                    <li>@Umbraco.GetDictionaryValue("facility.access1","Bovenverdiepingen alleen bereikbaar per trap")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3>@Umbraco.GetDictionaryValue("facility.building","Kenmerken gebouw")</h3>
+                    <li>@Umbraco.GetDictionaryValue("facility.building1","Half vrijstaand")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/wellness.jpg">@Umbraco.GetDictionaryValue("facility.wellness","Wellness")</h3>
+                    <li>@Umbraco.GetDictionaryValue("facility.sauna","Sauna")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/commroom.jpg">@Umbraco.GetDictionaryValue("facility.common_room","Gemeenschappelijke ruimtes")</h3>
+                    <li>@Umbraco.GetDictionaryValue("facility.common_room1","Spellenkamer")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3>@Umbraco.GetDictionaryValue("facility.orther","Overige")</h3>
+                    <li>@Umbraco.GetDictionaryValue("facility.orther1","Niet-roken in gehele accommodatie")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.orther2","Verwarming")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.orther3","Rookvrije kamers")</li>
+                </ul>
+                <ul class="faci-ul">
+                    <h3 class="hd-locatie"><img src="/icons/chat.jpg">@Umbraco.GetDictionaryValue("facility.lang","Gesproken talen")</h3>
+                    <li>@Umbraco.GetDictionaryValue("facility.dut","Duits")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.eng","Engels")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.fre","Frans")</li>
+                    <li>@Umbraco.GetDictionaryValue("facility.nth","Nederlands")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
