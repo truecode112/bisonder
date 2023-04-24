@@ -466,6 +466,14 @@ overflow: hidden;
     cursor: pointer;
 }
 
+.toerisme-btn-text {
+  font-size: 16px;
+}
+
+.topnav .touerisme {
+  display: inline-block;
+}
+
 .topnav li a {
 color: #56b25f;
 }
@@ -1008,6 +1016,19 @@ font-size: 15p !important;
 
 .topnav a {
 font-size: 13px;
+}
+
+.toerisme-btn-text {
+  font-size: 13px;
+}
+
+.topnav .touerisme {
+  display: none;
+}
+
+.topnav.responsive .touerisme {
+  display: block;
+  padding-left: 13px;
 }
 
 .hd-locatie-text p {
@@ -1848,4 +1869,9 @@ iframe.iframe-cont {
   
   .dropdown:hover .dropdown-content {
     display: block;
+  }
+
+  .toerisme-popup {
+    position: absolute;
+    margin-top: 20px;
   }

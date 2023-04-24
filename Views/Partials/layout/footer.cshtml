@@ -8,18 +8,17 @@
             <h2 class="bigheading">@Umbraco.GetDictionaryValue("footer.booknow")</h2>
                 <div class="br-linedark"></div>
                 <div class="ser-btns">
-                  <a href="example@mail.com?Reservering Vakantiewoning Bisonder">
+                  <a href='@Umbraco.GetDictionaryValue("mail.bisonder")'>
                     <button class="info-btn">@Umbraco.GetDictionaryValue("footer.check")</button>
                   </a>
-                  <a href="https://www.booking.com/hotel/be/huize-rosmere.nl.html" target="_blank">
+                  <a href='@Umbraco.GetDictionaryValue("footer.booklink")' target="_blank">
                     <button class="faci-btn">@Umbraco.GetDictionaryValue("footer.reserve")</button>
                   </a>
                 </div>
           </div>
       </div>
-     
-  </section>
-  <footer class="slice-ft">
+</section>
+<footer class="slice-ft">
     <div class="container d-flex">
       <div class="ftcol">
         <p>@Umbraco.GetDictionaryValue("footer.copyright")</p>
@@ -27,4 +26,4 @@
       <div class="ftcol-copy-rght"></div>
       <p>@Umbraco.GetDictionaryValue("footer.terms")</p>
     </div>
-  </footer>
+</footer>

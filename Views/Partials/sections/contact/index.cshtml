@@ -1,27 +1,29 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+﻿@using System.Web
+
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
     <section class="contact-section pad60">
         <div class="container d-flex">
             <div class="form-col">
-                <form id="contact" action="" method="post">
-                    <h3>Vragen?</h3>
+                <form id="contact" action="#" method="post">
+                    <h3>@Model.Value("toAsk")</h3>
                     <div class="br-line"></div>
                     <br>
                     <div class="fst-col">
-                        <input placeholder="Your name" type="text" name="name" onkeypress="return Validate(event);"
+                        <input placeholder="@Model.Value("namePlaceHolder")" id="name" name="name" onkeypress="return Validate(event);"
                             required>
-                        <input placeholder="Your Email Address" type="email" tabindex="2" required>
+                        <input placeholder="@Model.Value("emailPlaceHolder")" type="email" id="email" name="email" tabindex="2" required>
                     </div>
                     <div class="sec-col">
-                        <input placeholder="Subject " type="url" tabindex="4" required>
+                        <input placeholder="@Model.Value("subjectPlaceHolder") " id="subject" name="subject" tabindex="4" required>
                     </div>
                     <div class="third-col">
-                        <textarea placeholder="Message" tabindex="5" required></textarea>
+                        <textarea placeholder="@Model.Value("messagePlaceHolder")" id="message" name="message" tabindex="5" required></textarea>
                     </div>
-                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending"> Verstuur</button>
+                    <button style="cursor:pointer;" type="submit" name="submit" id="contact-submit" data-submit="...Sending"> @Model.Value("send")</button>
                 </form>
             </div>
             <div class="info-col">
-                <h3>Contact Info</h3>
+                <h3>@Model.Value("contactInfo")</h3>
                 <div class="br-line"></div>
                 <br>
                 <ul class="contact-ul">
@@ -29,13 +31,38 @@
 
                     <li>
                         <img src="/img/ph.png">
-                        <a href="tel:5555-555-5555"> @Model.Value("contactNumber")</a>
+                        <a href="tel:@Model.Value("contactNumber")"> @Model.Value("contactNumber")</a>
                     </li>
                     
                     <li><img src="/img/mail.png">
-                        <a href="mailto:@Model.Value("emailId")">@Model.Value("emailId")</a>
+                        <a href="mailto:@Model.Value("emailId")" id="toEmail">@Model.Value("emailId")</a>
                     </li>
                 </ul>
             </div>
         </div>
     </section>
+
+    <script>
+        const form = document.getElementById('contact');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            const toEmail = document.getElementById('toEmail').innerHTML;
+            window.location.href = "mailto:" + toEmail + "?subject=" + subject + "&body=" + message;
+        })
+        function sendEmail() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            alert(message);
+
+        }
+    </script>
+
+@{
+    
+}
