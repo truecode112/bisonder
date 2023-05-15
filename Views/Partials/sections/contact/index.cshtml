@@ -1,6 +1,4 @@
-﻿@using System.Web
-
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
     <section class="contact-section pad60">
         <div class="container d-flex">
             <div class="form-col">
@@ -20,6 +18,7 @@
                         <textarea placeholder="@Model.Value("messagePlaceHolder")" id="message" name="message" tabindex="5" required></textarea>
                     </div>
                     <button style="cursor:pointer;" type="submit" name="submit" id="contact-submit" data-submit="...Sending"> @Model.Value("send")</button>
+                    <h4 id="success-message" style="color:green;margin-top:20px;display:none;">@Model.Value("SuccessMessage")</h4>
                 </form>
             </div>
             <div class="info-col">
@@ -46,23 +45,61 @@
         const form = document.getElementById('contact');
         form.addEventListener('submit', (event) => {
             event.preventDefault();
-            const name = document.getElementById('name').value;
+            /*const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             const toEmail = document.getElementById('toEmail').innerHTML;
-            window.location.href = "mailto:" + toEmail + "?subject=" + subject + "&body=" + message;
+            window.location.href = "mailto:" + toEmail + "?subject=" + subject + "&body=" + message;*/
+            sendEmail();
         })
         function sendEmail() {
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-            alert(message);
+            const body = {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message,
+                from: email,
+                to: 'info@bisonder.be',
+            };
+            console.log('body >>>', body);
+            const response = fetch('https://dev.goodmealtime.com/email-sender/sendmail', {
+                method: 'POST',
+                body: JSON.stringify(body),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                }
+            }).then((res) => {
+                console.log('res >>>', res);
+                document.getElementById('success-message').style.display="block";
+                document.getElementById('name').value = "";
+                document.getElementById('email').value = "";
+                document.getElementById('subject').value = "";
+                document.getElementById('message').value = "";
+            })
+            // Email.send({
+            //     Host: "smtp.elasticemail.com",
+            //     Port: 2525,
+            //     Username: "info@bisonder.be",
+            //     Password: "C70065BAE7A812578120700DB1304499F4F6",
+            //     To: 'bert@webshopcompany.be',
+            //     Bcc: 'info@webshopcompany.be',
+            //     From: `"${name}" <${email}>`,
+            //     Subject: subject,
+            //     Body: message,
+            // })
+            // .then(function (message) {
+            //     //alert("mail sent successfully")
+            //     document.getElementById('success-message').style.display="block";
+            // });
+            }
 
-        }
     </script>
-
 @{
     
 }
