@@ -1,4 +1,27 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+  int[] numbers = Enumerable.Range(1, 20).ToArray();
+
+  Random random = new Random();
+
+  for (int i = numbers.Length - 1 ; i > 0 ; i--) 
+  {
+    int j = random.Next(i + 1);
+    int temp = numbers[i];
+    numbers[i] = numbers[j];
+    numbers[j] = temp;
+  }
+
+  int[] randomNumbers = numbers.Take(6).ToArray();
+  List<string> list = new List<string>();
+  List<string> texts = new List<string>();
+  foreach(int number in randomNumbers) {
+    list.Add(string.Format("Name{0}", number));
+    texts.Add(string.Format("Text{0}", number));
+  }
+  string[] randomNumbersString = list.ToArray();
+  string[] textStrings = texts.ToArray();
+}
 <section class="booking-section pad60">
     <div class="container">
       <div class="booking-hd">
@@ -14,11 +37,9 @@
           <div class="card card-1">
             <div class="card-inner">
               <div class="nm-div">
-                <span>p</span>
-                <p>Pascal<b><img src="/img/ENGLES.png">@Umbraco.GetDictionaryValue("nl")</b></p>
+                <p>@Model.Value(@randomNumbersString[item - 1])</p>
               </div>
-              <p class="uotes-p">" Het was een geweldige ervaring en zeer mooi vakantiehuis, een aanrader!"</p>
-              <a href="">>@Umbraco.GetDictionaryValue("home.booking.moreinfo")</a>
+              <p class="uotes-p max-lines">@Model.Value(@textStrings[item - 1])</p>
             </div>
           </div>
         }
